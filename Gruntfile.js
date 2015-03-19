@@ -11,7 +11,8 @@
 			// Metadata.
 			pkg: pkg = grunt.file.readJSON("bower.json"),
 			banner: "/*! <%= pkg.name %> - v<%= pkg.version %> - " +
-				" Licensed <%= pkg.license %> */\n",
+				" Licensed <%= pkg.license %> \n" +
+				" IE8 Support added by Create-Ed/lazysizes */\n",
 			// Task configuration.
 			uglify: {
 				options: {
