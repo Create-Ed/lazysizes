@@ -9,7 +9,19 @@
 }(window, function(window, document) {
 	'use strict';
 	/*jshint eqnull:true */
-	if(!document.getElementsByClassName){return;}
+	if(!document.getElementsByClassName){
+		window.onload = function() {
+			var images = document.querySelectorAll('img.lazyload');
+			for ( i = 0; i < images.length; ++i ) {
+				if ( images[i].getAttribute('data-srcset') ) {
+					images[i].setAttribute('srcset', images[i].getAttribute('data-srcset'));
+				}
+				if ( images[i].getAttribute('data-src') ) {
+					images[i].setAttribute('src', images[i].getAttribute('data-src'));
+				}
+			}
+		}
+	}
 
 	var lazySizesConfig;
 
